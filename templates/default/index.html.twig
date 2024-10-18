@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!
+{% endblock %}
+
+{% block body %}
+	<div class="py-2 sm:py-4">
+		<div class="mx-auto max-w-7xl px-2 lg:px-4">
+			<div class="mx-auto max-w-2xl lg:mx-0">
+				<p class="text-base font-semibold leading-4 text-emerald-700">{{ other_info.platform }}</p>
+				<h1 class="mt-2 text-4xl font-bold tracking-tight text-emerald-950 dark:text-emerald-300 sm:text-6xl">{{ 'default.title'|trans({'%ip': ip_info.IP}) }}</h1>
+				<p class="mt-6 text-lg leading-6 text-emerald-600">
+                {{ 'default.description'|trans({'%browser': other_info.browser, '%device': other_info.device|trans}) }}
+                </p>
+			</div>
+		</div>
+	</div>
+	{% if ip_info.error is defined %}
+		<div class="rounded-md backdrop-blur-sm bg-red-50 p-4">
+			<div class="flex">
+				<div class="flex-shrink-0">
+					<twig:ux:icon class="h-5 w-5 text-red-400" name="heroicons:x-circle-20-solid"/>
+				</div>
+				<div class="ml-3">
+					<h3 class="text-sm font-medium text-red-800">{{ 'alert.error.title'|trans }}</h3>
+					<div class="mt-2 text-sm text-red-700">
+						<ul role="list" class="list-disc space-y-1 pl-5">
+							<li>{{ ip_info.error }}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% else %}
+		<div class="sm:grid grid-cols-2 gap-4">
+			<div class="overflow-hidden backdrop-blur-sm bg-white/30 shadow sm:rounded-md">
+				<ul role="list" class="divide-y divide-emerald-800/10 dark:divide-emerald-200">
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.IP }}</li>
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.City }}</li>
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.ISP }}</li>
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.Country }}</li>
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.Region }}</li>
+					<li class="px-4 py-4 sm:px-6">{{ ip_info.Timezone }}</li>
+				</ul>
+			</div>
+			<div>{{ map ? ux_map(map, { style: 'min-height: 341px', class: 'sm:rounded-md' }) : '' }}</div>
+		</div>
+	{% endif %}
+    <p class="mt-2 text-sm leading-6 text-gray-600 text-center">Retour ping <a href="google.com">google.com</a> : {{ ping_status }}</p>
+{% endblock %}

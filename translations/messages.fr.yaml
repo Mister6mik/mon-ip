@@ -1,0 +1,20 @@
+name: Mon IP
+title: Mon IP
+close: Fermer
+open: Ouvrir
+
+Desktop: Ordinateur
+Mobile: Appareil mobile
+Tablet: Tablette
+
+alert:
+  error:
+    title: Une erreur est survenue
+
+menu:
+  home:
+    label: Accueil
+
+default:
+  title: Bonjour %ip
+  description: Vous utilisez %browser sur %device
