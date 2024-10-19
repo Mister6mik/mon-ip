@@ -51,7 +51,7 @@
 					<li class="px-4 py-4 sm:px-6">{{ ip_info.Timezone }}</li>
 				</ul>
 			</div>
-			<div>{{ map ? ux_map(map, { style: 'min-height: 341px', class: 'sm:rounded-md' }) : '' }}</div>
+			<div>{{ map ? ux_map(map, { style: 'min-height: 341px', class: 'sm:rounded-md z-0' }) : '' }}</div>
 		</div>
 	{% endif %}
     <p class="mt-2 text-sm leading-6 text-gray-600 text-center">Retour ping <a href="google.com">google.com</a> : {{ ping_status }}</p>
