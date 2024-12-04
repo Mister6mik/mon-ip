@@ -18,3 +18,6 @@ menu:
 default:
   title: Bonjour %ip
   description: Vous utilisez %browser sur %device
+  form:
+    search:
+      label: Rechercher

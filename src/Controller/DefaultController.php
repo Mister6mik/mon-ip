@@ -42,6 +42,7 @@ class DefaultController extends AbstractController
             $data = json_decode($response->getContent(), true);
 
             $ping = exec("ping -c 1 google.com", $output, $status);
+            $pingStatus = $status === 0 ? "OK" : "NOK";
             // Vérifier si la requête a réussi
             if (isset($data['status']) && $data['status'] === 'success') {
                 // Extraire les informations
@@ -77,7 +78,7 @@ class DefaultController extends AbstractController
             'ip_info' => $ipInfo,
             'map' => $map,
             'other_info' => $other_info,
-            'ping_status' => $status,
+            'ping_status' => $pingStatus,
             'form' => $search_form
         ];
     }

@@ -14,7 +14,9 @@ class SearchIpType extends AbstractType
     {
         $builder
             ->add('IP', TextType::class)
-            ->add('search', SubmitType::class)
+            ->add('search', SubmitType::class, [
+                'label' => 'default.form.search.label',
+            ])
         ;
     }
 

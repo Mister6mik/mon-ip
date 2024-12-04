@@ -17,7 +17,7 @@
         {{ form_start(form) }}
         <div class="flex gap-x-4 py-4">
             {{ form_label(form.IP, null, {'label_attr': { 'class': 'sr-only' }}) }}
-            {{ form_widget(form.IP, {'attr': { 'class': 'min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6' }}) }}
+            {{ form_widget(form.IP, {'attr': { 'class': 'bg-white dark:bg-emerald-800 min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 dark:text-emerald-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-emerald-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6' }}) }}
             {{ form_widget(form.search, { 'attr': { 'class': 'flex-none rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600'}}) }}
         </div>
         {{ form_end(form) }}
@@ -42,7 +42,7 @@
 	{% else %}
 		<div class="sm:grid grid-cols-2 gap-4">
 			<div class="overflow-hidden backdrop-blur-sm bg-white/30 shadow sm:rounded-md">
-				<ul role="list" class="divide-y divide-emerald-800/10 dark:divide-emerald-200">
+				<ul role="list" class="divide-y divide-emerald-800/10 dark:divide-emerald-200 dark:text-emerald-100">
 					<li class="px-4 py-4 sm:px-6">{{ ip_info.IP }}</li>
 					<li class="px-4 py-4 sm:px-6">{{ ip_info.City }}</li>
 					<li class="px-4 py-4 sm:px-6">{{ ip_info.ISP }}</li>
